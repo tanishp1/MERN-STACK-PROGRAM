@@ -4,29 +4,37 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>login page</title>
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
 
-        <style>
-            .p-text-1 {
-                text-align: center;
-            }
-        </style>
-
+    <link rel="stylesheet" href="./../CSS/style.css">
 </head>
 
 <body>
+    <div class="container">
+        <div class="row">
+            <div class="col-12 main-box text-center">
+                <form>
+                    <div class="form-group p-2">
+                        <h3>Sign in</h3>
+                        <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
+                        placeholder="Username">
+                    <div class="form-group p-2">
+                        <input type="password" class="form-control" id="exampleInputPassword1"
+                        placeholder="Password">
+                    </div>
+                    <div class="button p-2">
+                    <button type="submit" class="btn btn-primary w-100">Sign in</button>
+                    </div>
+                    <h6 class="p-3">forgot password</h6>
+                    <p class="button p-3">Don't have an account ? <a class = "color-#98D8C6FF">Create one</a></p>
+                </form>
+            </div>
+        </div>
+    </div>
 
-    <h1>hello world</h1>
-    <p class="p-text-1">
-        Developed maintaining full-stack application using MERN stacked implement restful API and optimized
-    </p><p class ="text-center">
-        Build a responsive hospital website with clear detail on department doctor and services
-    </p>
-
-    
 
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
         integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"

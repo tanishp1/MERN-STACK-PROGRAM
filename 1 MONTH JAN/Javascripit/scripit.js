@@ -1,1 +1,1 @@
-console.log("HOC SOLUTION PVT"); 
+console.log("HOC TECH SOL");

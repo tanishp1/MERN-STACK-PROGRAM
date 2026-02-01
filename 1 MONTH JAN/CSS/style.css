@@ -1,23 +1,11 @@
 body {
-    background-color:#7E7E7EFF;
-    display:flex;
-    justify-content: center;
-    height:100vh;
-    align-items: center;
+    background-color: rgb(238, 236, 236);
 }
-.main-box {
-    background-color: white;
-    padding:40px;
-    margin:300px;
-    width:70vh;
-    height: 60vh;
+.nav-ul {
+    margin-left:45%;
 }
-.btn-primary {
-    background-color:#16A98CFF ;
-}
-h6 {
-    color:#80CBB5FF;
-}
-a {
-    text-decoration: none;
+.nav-container {
+    padding-left:15%;
+    padding-right:15%;
+    background:#1E04AF;
 }

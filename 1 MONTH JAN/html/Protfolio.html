@@ -6,38 +6,110 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 
+    <!-- bootstrap link -->
+
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+
+    <!-- google font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Google+Sans:ital,opsz,wght@0,17..18,400..700;1,17..18,400..700&family=Outfit:wght@100..900&display=swap"
+        rel="stylesheet">
+
+    <!-- basic css -->
+
     <link rel="stylesheet" href="./../CSS/style.css">
 </head>
 
 <body>
+
+    <!-- navbar section -->
     <div class="nav-container text-center">
-    <nav class="navbar navbar-expand-lg">
-        <div class="container-fluid">
-            <a class="navbar-brand text-white" href="#">Tanish Pawar</a>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav nav-ul">
-                    <li class="nav-item">
-                        <a class="nav-link active text-white" aria-current="page" href="#">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link text-white" href="#">About</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link text-white" href="#">Experience</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link text-white" href="#">Project</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link text-white" href="#">Contact</a>
-                    </li>
-                </ul>
+        <nav class="navbar navbar-expand-lg">
+            <div class="container-fluid">
+                <a class="navbar-brand text-white" href="#">Tanish Pawar</a>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav nav-ul">
+                        <li class="nav-item">
+                            <a class="nav-link active text-white" aria-current="page" href="#">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-white" href="#">About</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-white" href="#">Experience</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-white" href="#">Project</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-white" href="#">Contact</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </div>
+
+    <!-- main section -->
+    <section class="hero-section">
+        <div class="container">
+            <h1>Hi, I'm Tanish Pawar</h1>
+            <p>MERN Stack with 2+ year of Experience</p>
+            <a href="" class="btn btn-primary">Hire Me</a>
+        </div>
+    </section>
+
+    <!-- about section -->
+    <section class="about-section my-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <img src="./../tanish .4.jpg" class="w-50%"> 
+
+                </div>
+                <div class="col-md-6 text-box">
+                    <h2 class="section-title">About Me</h2>
+                    <p>I'm dedicated MERN Stack developer within 2 year of experience in building scalable and user
+                        friendly with application. Proficinet in MongoDB, Express.js React.js and Node.js I specialize
+                        in creating seamless full stack solutions</p>
+                    <p>My passion lies in solving complex problem and deliverying clean, efficient code I thrive in
+                        collaboration environment and am always eager to learn new technologies to enhance my skill etc
+                    </p>
+                    <button class="btn btn-primary">Download Resume</button>
+                </div>
             </div>
         </div>
-    </nav>
+    </section>
+
+    <!-- Skill section -->
+    <section class="skil-section">
+        <div class="container">
+        <div class="row text-center">
+            <div class="col-md-3">
+                <h5>MongoDB</h5>
+                <p>Designing and managing noSQL database for efficient data storage and scalability</p>
+            </div>
+            <div class="col-md-3">
+                <h5>Express.js</h5>
+                <p>Building robust restful API;s for seamless backend functionality</p>
+            </div>
+            <div class="col-md-3">
+                <h5>React</h5>
+                <p>Creating dynamic and responsives front-end interface with react</p>
+            </div>
+            <div class="col-md-3">
+                <h5>Node.js</h5>
+                <p>Developing high performance server-side application</p>
+            </div>
+        </div>
     </div>
+    </section>
+
+    <!-- bootstrap js -->
+
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
         integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
         crossorigin="anonymous"></script>

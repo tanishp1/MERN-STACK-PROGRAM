@@ -24,7 +24,7 @@ function App() {
         | Refund Policy | Contact us Use Internet Explorer Version 10.0 and above. 
         Screen resolution 1024 X 768 pixel
       </p>
-
+      
       <ul>
         <li>
           Home

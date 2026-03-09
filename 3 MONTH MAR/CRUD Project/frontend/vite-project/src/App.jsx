@@ -8,20 +8,20 @@ import { ToastContainer, toast } from 'react-toastify';
 
 import "./style.css"
 import { useState } from 'react';
+import { useEffect } from 'react';
 
 function App() {
 
-const [IteamName , SetIteamName] = useState() 
+const [iteamName , setIteamName] = useState() 
+const [iteamData , setData] = useState()
 
-console.log(IteamName ,'iteam name value')
+console.log(iteamName ,'iteam name value')
   const handleOnChange = (event) => {
 
-    SetIteamName(event.target.value)
-
+    setIteamName(event.target.value)
 
     console.log("Typing on input field");
   };
-
 
   function SubmitForm(e) {
     e.preventDefault();
@@ -37,8 +37,26 @@ console.log(IteamName ,'iteam name value')
       progress: undefined,
       theme: "light",
     });
-
   }
+
+  const getAllIteamData = async () => {
+    try {
+
+      const apiResponse = await fetch("http://localhost:9090/api/get-all-iteam")
+      const responseData = await apiResponse.json()
+      setData(responseData.data);
+      console.log(responseData)
+
+    }catch (error) {
+      console.log(error)
+    }
+  }
+
+  useEffect (() => {
+    getAllIteamData()
+  }, []);
+
+  console.log(iteamData , "iteam data ===>")
 
   return (
     <>
@@ -137,32 +155,24 @@ console.log(IteamName ,'iteam name value')
                 </tr>
               </thead>
               <tbody>
-                <tr>
-                  <td>1</td>
-                  <td>Pen</td>
-                  <td>jel Pen</td>
-                  <td>10</td>
-                  <td>20</td>
-                  <td>10</td>
-                  <td>Box</td>
-                  <td className='d-flex'>
-                    <button className='btn btn-success'>Edit</button>
-                    <button className='btn btn-danger mx-2'>Delete</button>
-                  </td>
-                </tr>
-                <tr>
-                  <td>2</td>
-                  <td>Book</td>
-                  <td>Note book</td>
-                  <td>10</td>
-                  <td>20</td>
-                  <td>10</td>
-                  <td>Box</td>
-                  <td className='d-flex'>
-                    <button className='btn btn-success'>Edit</button>
-                    <button className='btn btn-danger mx-2'>Delete</button>
-                  </td>
-                </tr>
+                {iteamData && iteamData.map((each , index) => {
+                  return (
+                    <tr>
+                    <td>{index + 1}</td>
+                    <td>{each.name}</td>
+                    <td>{each.description}</td>
+                    <td>{each.purchasePrice}</td>
+                    <td>{each.sellingPrice}</td>
+                    <td>{each.quantity}</td>
+                    <td>{each.unit}</td>
+                    <td className='d-flex'>
+                      <button className='btn btn-success'>Edit</button>
+                      <button className='btn btn-danger mx-2'>Delete</button>
+                    </td>
+                  </tr>
+                );
+                })}
+              
               </tbody>
             </Table>
           </div>

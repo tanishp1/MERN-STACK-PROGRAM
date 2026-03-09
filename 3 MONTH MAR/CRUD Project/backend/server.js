@@ -17,18 +17,31 @@
 
 console.log("hello node js started");
 
-const express = require('express')
+// node js framework
+const express = require('express') 
+// app -variable - store express function
 const app = express()
+// library - connect mongodb database
 const monogoose = require('mongoose')
+const cors = require('cors')
 
+app.use(cors())
+// covert all data into json format
 app.use(express.json())
 
+//Db connection
 monogoose.connect("mongodb://localhost:27017/iteam-database").then(() => console.log("Mongo DB Connected")).catch((error) => console.log("error"))
+
+// Schema data base table structure
+// value store database structure
 
 const iteamSchema = new monogoose.Schema({
     name: String,
     description : String,
+    purchasePrice: Number,
     sellingPrice : Number,
+    quantity: Number,
+    unit: String
 })
 
 const iteam = new monogoose.model("iteam", iteamSchema)
@@ -38,15 +51,17 @@ app.post("/api/create-iteam" , async (req , res) => {
 
     try {
 
-        const { name , description , sellingPrice } = req.body
+        const { name , description , purchasePrice,  sellingPrice, quantity, unit } = req.body;
 
         const saveIteam = new iteam(
         {
             name,
             description,
-            sellingPrice
-        }
-    )
+            purchasePrice,
+            sellingPrice,
+            quantity,
+            unit
+        })
 
         await saveIteam.save()
 

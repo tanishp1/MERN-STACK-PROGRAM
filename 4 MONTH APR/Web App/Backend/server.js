@@ -1,3 +1,4 @@
+
 // dotenv loads our secret values from .env file into process.env
 // We call this at the very top so all files can use process.env values
 require('dotenv').config()
@@ -5,8 +6,16 @@ require('dotenv').config()
 // express is a Node.js framework that helps us create a backend server easily
 const express = require('express')
 
+const rateLimit = require('express-rate-limit')
+
 // app is our main server object - we use it to create routes and start server
 const app = express()
+
+const limiter = rateLimit({
+    max : 5,
+    windowMs : 60 * 60 * 1000,
+    message : 'too many request'
+})
 
 // cors allows our frontend (running on different port) to talk to this backend
 // Without cors, browser will block the request
@@ -34,6 +43,8 @@ const authMiddleware = require('./authMiddleware/authMiddleware')
 // express.json() allows our server to read JSON data sent from frontend
 // Without this, req.body will be undefined
 app.use(express.json())
+
+app.use('/api', limiter);
 
 // cors() allows all frontend origins to call this backend
 // Without this, browser blocks requests from different ports

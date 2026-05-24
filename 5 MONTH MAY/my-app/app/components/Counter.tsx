@@ -5,7 +5,7 @@ export default function Counter(){
     const [count, setCount] = useState(0)
 
     return(
-        <div>
+        <div style={{ textAlign: "center", marginTop: "50px" }}>
             <button onClick={()=>setCount(count+1)}>counter increment={count}</button>
         </div>
     )

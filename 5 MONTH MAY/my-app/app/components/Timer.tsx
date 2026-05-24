@@ -12,8 +12,9 @@ export default function Timer(){
         return () => clearInterval(interval);
     }, [])
     return(
-        <div>
+        <div style={{ textAlign: "center", marginTop: "50px" }}>
             <button onClick={()=>setSeconds(seconds+1)}>seconds increments{seconds}</button>
+            <p>Seconds: {seconds}</p>
         </div>
     )
 }
